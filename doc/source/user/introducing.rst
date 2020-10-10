@@ -98,7 +98,7 @@ so on. NumPy gives two dozen types to choose from. `Try it out <introducing_nump
 
 There's a loophole to homogeneneity, the object array, which can point to arbitrary
 Python objects. It's homogeneous in the sense that all its elements
-are pointers. `Learn more <introducing_numpy>`_.
+are pointers. `Try it out <introducing_numpy>`_. `Learn more <introducing_numpy>`_.
 
 Formally, NumPy arrays are called `ndarrays`, but this site almost always uses
 the simpler (and also legal)  `array`.
@@ -142,15 +142,15 @@ Array size is fixed. Once an array is created, the number of elements cannot
 change. But:
 
 * You can redistribute which axes the elements lie on (the "shape"), so
-  that the length of one dimension can grow as another shrinks. `Learn more <introducing_numpy>`_.
+  that the length of one dimension can grow as another shrinks. `Try it out <introducing_numpy>`_. `Learn more <introducing_numpy>`_.
 
-* You can append arrays to make a new larger array. `Learn more <introducing_numpy>`_.
+* You can append arrays to make a new larger array. `Try it out <introducing_numpy>`_. `Learn more <introducing_numpy>`_.
 
-* An array can be split into two or more smaller arrays. `Learn more <introducing_numpy>`_.
+* An array can be split into two or more smaller arrays. `Try it out <introducing_numpy>`_. `Learn more <introducing_numpy>`_.
 
 * You can sometimes make an array behave as though it were larger, matching it
   to the size of a second array to take advantage of NumPy's element-by-element
-  processing. This is broadcasting. `Learn more <introducing_numpy>`_.
+  processing. This is broadcasting. `Try it out <introducing_numpy>`_. `Learn more <introducing_numpy>`_.
 
 
 Creating an array from a recipe
@@ -159,16 +159,16 @@ Creating an array from a recipe
 You can create an array from data in a file, of course, but NumPy also gives a
 number of ways to create arrays from scratch. Such arrays can contain all 0's,
 random numbers, 1's on the diagonal, subdivisions of an interval, and dozens
-more. `Learn more <introducing_numpy>`_.
+more. `Try it out <introducing_numpy>`_. `Learn more <introducing_numpy>`_.
 
 You can also create an array from numbers you specify yourself
-or from Python lists. `Learn more <introducing_numpy>`_.
+or from Python lists. `Try it out <introducing_numpy>`_. `Learn more <introducing_numpy>`_.
 
 Creating an array from a file
 ==============================================================================
 
 NumPy has routines for reading and writing a variety of text
-and binary files. `Learn more <introducing_numpy>`_.
+and binary files. `Try it out <introducing_numpy>`_. `Learn more <introducing_numpy>`_.
 
 Array printouts
 ==============================================================================
