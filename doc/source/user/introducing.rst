@@ -25,7 +25,7 @@ things. NumPy knowledge is a passport to more specialized packages that also
 operate on arrays.
 
 NumPy's magic is less in what it does -- addition is still addition
--- than in how efficiently it moves along those millions of datapoints.
+-- than in how efficiently it moves through those millions of datapoints.
 
 There's some magic in using it, too. If much of your programming life has been
 writing loops, it's joyful to work with arrays as simply as if they were
