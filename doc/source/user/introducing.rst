@@ -71,9 +71,10 @@ NumPy also provides a do-what-I-mean convenience called broadcasting, which
 allows you to, for instance, increment every element of an N-dimensional array
 by adding a scalar.
 
-Arrays can be initialized from files or from a variety of routines -- diagonal
-1's, random numbers, ascending (or descending) numbers, evenly spaced
-floating-point numbers inside a range, and more.
+Arrays can be initialized from files or created from scratch a variety of
+routines, creating arrays with all zeros, diagonal 1's, random numbers,
+arithmetic sequences, evenly spaced floating-point numbers inside a range, and
+more.
 
 Array concatenation is of course possible, and becomes interesting
 when it can take place on any of N dimensions.
@@ -134,38 +135,6 @@ dimension d is n, the value of tuple element d ranges from 0 to n-1.
 NumPy officially calls a dimension an "axis," but "dimension" is what people
 usually say.
 
-Python's index syntax still works
-==============================================================================
-
-Slices, negative indexes, steps -- the power tools of Python indexing work in
-NumPy as well.
-
-NumPy indexing goes further: an array can be used to index an array.
-
-   - Recall that the result of an array comparison is an array. You can use
-     that array as an index to select only elements for which the test
-     returned true.
-
-     An array used this way is called a "mask." `Try it out
-     <introducing_numpy>`_. `Learn more <introducing_numpy>`_.
-
-   - You can individually select array elements to use in a new array. For instance,
-      indexing array ``a`` using the array [3,3,1,8] creates a four-element
-      array consisting of a[3], a[3], a[1], and a[8].
-
-      The array that makes the choice is known as an "index array" and the
-      technique is known as "fancy indexing" or "advanced indexing." `Try it
-      out <introducing_numpy>`_. `Learn more <introducing_numpy>`_.
-
-They're are similar but not the same.
-
-    - In a mask array, the value of array element m[i] is boolean, and it
-      corresponds to element a[i].
-
-    - In an index array, the value of array element x[i] is an index value,
-      and it corresponds to element a[x[i]].
-
-
 Fixed-size arrays, but...
 ==============================================================================
 
@@ -173,7 +142,7 @@ Array size is fixed. Once an array is created, the number of elements cannot
 change. But:
 
 * You can redistribute which axes the elements lie on (the "shape"), so
-  that the length of one dimension can grow as another shrinks. `Try it out <introducing_numpy>`_. `Learn more <introducing_numpy>`_.
+  that the length of one dimension might grow as another shrinks. `Try it out <introducing_numpy>`_. `Learn more <introducing_numpy>`_.
 
 * You can append arrays to make a new larger array. `Try it out <introducing_numpy>`_. `Learn more <introducing_numpy>`_.
 
@@ -182,6 +151,38 @@ change. But:
 * You can sometimes make an array behave as though it were larger, matching it
   to the size of a second array to take advantage of NumPy's element-by-element
   processing. This is broadcasting. `Try it out <introducing_numpy>`_. `Learn more <introducing_numpy>`_.
+
+Python's index syntax still works
+==============================================================================
+
+Slices, negative indexes, steps -- the power tools of Python indexing work in
+NumPy as well.
+
+NumPy indexing goes further: an array can be used to index an array.
+
+- Recall that the result of an array comparison is an array. You can use
+  that array as an index to select only elements for which the test
+  returned true.
+
+  An array used this way is called a "mask." `Try it out
+  <introducing_numpy>`_. `Learn more <introducing_numpy>`_.
+
+- You can individually select array elements to use in a new array. For instance,
+  indexing array ``a`` using the array [3,3,1,8] creates a four-element
+  array consisting of a[3], a[3], a[1], and a[8].
+
+  The array that makes the choice is known as an "index array" and the
+  technique is known as "fancy indexing" or "advanced indexing." `Try it
+  out <introducing_numpy>`_. `Learn more <introducing_numpy>`_.
+
+They're similar but not the same.
+
+- In a mask array, the value of array element m[i] is boolean, and it
+  corresponds to element a[i].
+
+- In an index array, the value of array element x[i] is an index value,
+  and it corresponds to element a[x[i]].
+
 
 
 
