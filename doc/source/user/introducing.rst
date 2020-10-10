@@ -78,6 +78,9 @@ floating-point numbers inside a range, and more.
 Array concatenation is of course possible, and becomes interesting
 when it can take place on any of N dimensions.
 
+NumPy provides powerful ways to select elements beyond Python's already powerful
+indexing.
+
 This page summarizes NumPy's core points. Then you'll want to go deeper:
 
 - To try things out, visit the Tutorials section.
@@ -91,29 +94,33 @@ Identically typed elements
 ==============================================================================
 
 NumPy arrays are homogeneous -- which is to say that all elements in every
-dimension must have the same datatype -- say, 64-bit floating point. On the
-other hand, NumPy offers many choices beyond Python's float and integer.
-Scientists need control over data's compactness, numeric range, precision, and
-so on. NumPy gives two dozen types to choose from. `Try it out <introducing_numpy>`_. `Learn more <introducing_numpy>`_.
+dimension must have the same datatype, say 64-bit floating point.
+The choices, however, far exceed Python's float and integer. Scientists need
+control of their data's size, numeric range, precision, and so on. NumPy
+gives two dozen types to choose from. `Try it out <introducing_numpy>`_.
+`Learn more <introducing_numpy>`_.
 
-There's a loophole to homogeneneity, the object array, which can point to arbitrary
-Python objects. It's homogeneous in the sense that all its elements
-are pointers. `Try it out <introducing_numpy>`_. `Learn more <introducing_numpy>`_.
+The type need not be a number; it can be a string, a C-style record with named
+fields, or another array embedded in the first. Another type is a homogeneity
+loophole: The "object" type allows the array to incorporate arbitrary Python
+objects. The array is still homogeneous because object elements are pointers.
+`Try it out <introducing_numpy>`_. `Learn more <introducing_numpy>`_.
 
-Formally, NumPy arrays are called `ndarrays`, but this site almost always uses
-the simpler (and also legal)  `array`.
+Formally, NumPy arrays are called `ndarrays`, but everyone uses the simpler
+(and also legal) term `array`.
 
 
 Up to 32 dimensions
 ==============================================================================
 
-An array can have up to 32 dimensions, each of arbitrary length. A tuple identifies each
-cell uniquely. When indexing, it isn't necessary to make the tuple explicit, so a
-3-dimensional array `a` might be indexed as
+An array can have up to 32 dimensions, each of arbitrary length. A tuple,
+one element per dimension, identifies each cell uniquely.
+
+In an index the tuple is implied, allowing users to simply write
 
 a[7,5,31]
 
-meaning
+rather than
 
 a[(7,5,31)]
 
@@ -124,15 +131,39 @@ The number of tuple elements is the number of dimensions.
 The number of elements in a dimension is its length. If the length of
 dimension d is n, the value of tuple element d ranges from 0 to n-1.
 
-NumPy uses the word "axis" for dimension, but "dimension" is what people
+NumPy officially calls a dimension an "axis," but "dimension" is what people
 usually say.
 
-Python index tricks still apply
+Python's index syntax still works
 ==============================================================================
 
-The slicing allowed by Python indexes is allowed in NumPy indexes too.
+Slices, negative indexes, steps -- the power tools of Python indexing work in
+NumPy as well.
 
-There's a great more to say about NumPy indexing. It's discussed below.
+NumPy indexing goes further: an array can be used to index an array.
+
+   - Recall that the result of an array comparison is an array. You can use
+     that array as an index to select only elements for which the test
+     returned true.
+
+     An array used this way is called a "mask." `Try it out
+     <introducing_numpy>`_. `Learn more <introducing_numpy>`_.
+
+   - You can individually select array elements to use in a new array. For instance,
+      indexing array ``a`` using the array [3,3,1,8] creates a four-element
+      array consisting of a[3], a[3], a[1], and a[8].
+
+      The array that makes the choice is known as an "index array" and the
+      technique is known as "fancy indexing" or "advanced indexing." `Try it
+      out <introducing_numpy>`_. `Learn more <introducing_numpy>`_.
+
+They're are similar but not the same.
+
+    - In a mask array, the value of array element m[i] is boolean, and it
+      corresponds to element a[i].
+
+    - In an index array, the value of array element x[i] is an index value,
+      and it corresponds to element a[x[i]].
 
 
 Fixed-size arrays, but...
@@ -153,16 +184,7 @@ change. But:
   processing. This is broadcasting. `Try it out <introducing_numpy>`_. `Learn more <introducing_numpy>`_.
 
 
-Creating an array from a recipe
-==============================================================================
 
-You can create an array from data in a file, of course, but NumPy also gives a
-number of ways to create arrays from scratch. Such arrays can contain all 0's,
-random numbers, 1's on the diagonal, subdivisions of an interval, and dozens
-more. `Try it out <introducing_numpy>`_. `Learn more <introducing_numpy>`_.
-
-You can also create an array from numbers you specify yourself
-or from Python lists. `Try it out <introducing_numpy>`_. `Learn more <introducing_numpy>`_.
 
 Creating an array from a file
 ==============================================================================
@@ -170,20 +192,23 @@ Creating an array from a file
 NumPy has routines for reading and writing a variety of text
 and binary files. `Try it out <introducing_numpy>`_. `Learn more <introducing_numpy>`_.
 
+Creating an array from a recipe
+==============================================================================
+
+Also a number of routines will create an array from scratch. Such arrays can
+contain all 0's, random numbers, 1's on the diagonal, subdivisions of an
+interval, and dozens more. `Try it out <introducing_numpy>`_. `Learn more
+<introducing_numpy>`_.
+
+You can also create an array from numbers you specify yourself
+or from Python lists. `Try it out <introducing_numpy>`_. `Learn more <introducing_numpy>`_.
+
 Array printouts
 ==============================================================================
 
 New array or new look?
 ==============================================================================
 
-The power of indexes
-==============================================================================
-Indexing with arrays of indices
-------------------------------------------------------------------------------
-Indexing with boolean arrays
-------------------------------------------------------------------------------
-Indexing with strings
-------------------------------------------------------------------------------
 ..
     For example, the coordinates of a point in 3D space ``[1, 2, 1]`` has
     one axis. That axis has 3 elements in it, so we say it has a length
