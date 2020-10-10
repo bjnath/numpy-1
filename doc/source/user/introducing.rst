@@ -71,13 +71,12 @@ NumPy also provides a do-what-I-mean convenience called broadcasting, which
 allows you to, for instance, increment every element of an N-dimensional array
 by adding a scalar.
 
-Arrays can be initialized from files or created from scratch a variety of
+Arrays can be initialized from files or created from scratch by a variety of
 routines, creating arrays with all zeros, diagonal 1's, random numbers,
 arithmetic sequences, evenly spaced floating-point numbers inside a range, and
 more.
 
-Array concatenation is of course possible, and becomes interesting
-when it can take place on any of N dimensions.
+Arrays can of course be concatenated -- on any of N dimensions.
 
 NumPy provides powerful ways to select elements beyond Python's already powerful
 indexing.
@@ -114,8 +113,8 @@ Formally, NumPy arrays are called `ndarrays`, but everyone uses the simpler
 Up to 32 dimensions
 ==============================================================================
 
-An array can have up to 32 dimensions, each of arbitrary length. A tuple,
-one element per dimension, identifies each cell uniquely.
+An array can have up to 32 dimensions, each of arbitrary length. A tuple
+-- one element for each dimension -- identifies every cell uniquely.
 
 In an index the tuple is implied, allowing users to simply write
 
@@ -152,7 +151,7 @@ change. But:
   to the size of a second array to take advantage of NumPy's element-by-element
   processing. This is broadcasting. `Try it out <introducing_numpy>`_. `Learn more <introducing_numpy>`_.
 
-Python's index syntax still works
+Python's index syntax still works, and more
 ==============================================================================
 
 Slices, negative indexes, steps -- the power tools of Python indexing work in
@@ -182,10 +181,6 @@ They're similar but not the same.
 
 - In an index array, the value of array element x[i] is an index value,
   and it corresponds to element a[x[i]].
-
-
-
-
 
 Creating an array from a file
 ==============================================================================
