@@ -72,8 +72,8 @@ allows you to, for instance, increment every element of an N-dimensional array
 by adding a scalar.
 
 Arrays can be initialized from files or created from scratch by a variety of
-routines, creating arrays with all zeros, diagonal 1's, random numbers,
-arithmetic sequences, evenly spaced floating-point numbers inside a range, and
+routines, creating arrays with all zeros, diagonal 1's, random numbers in
+a variety of distributions, arithmetic sequences, evenly spaced floating-point numbers inside a range, and
 more.
 
 Arrays can of course be concatenated -- on any of N dimensions.
@@ -191,10 +191,10 @@ and binary files. `Try it out <introducing_numpy>`_. `Learn more <introducing_nu
 Creating an array from a recipe
 ==============================================================================
 
-Also a number of routines will create an array from scratch. Such arrays can
-contain all 0's, random numbers, 1's on the diagonal, subdivisions of an
-interval, and dozens more. `Try it out <introducing_numpy>`_. `Learn more
-<introducing_numpy>`_.
+Included also are a variety of routines to create an array from scratch:
+all 0's, random numbers from several distributions, 1's on the diagonal,
+equispaced subdivisions of an interval, and dozens more. `Try it out
+<introducing_numpy>`_. `Learn more <introducing_numpy>`_.
 
 You can also create an array from numbers you specify yourself
 or from Python lists. `Try it out <introducing_numpy>`_. `Learn more <introducing_numpy>`_.
